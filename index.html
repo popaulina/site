@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div id="container">
+		<div class="nav"> 
+			Redesign in progress. In the meantime: <br/><br/>
+			Find me on <a href='https://www.linkedin.com/in/paulinalevit'>linkedin</a> and <a href='https://github.com/popaulina'>github.</a>
+		</div>
+	</div>
+</body>
+</html>
+<link rel="stylesheet" type="text/css" href="styles.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script type="text/javascript">
+	for (i=0; i<1000; i++) {
+	    $('<div class="child">').appendTo(container);
+	}
+	$(document).ready(function(){
+		$(".child").hover(function() {
+		    $(this).css("background-color", getColor());
+		});
+	});
+	
+	setInterval(function() {
+		var x = document.getElementById("container");
+  		x.getElementsByClassName("child")[Math.floor(Math.random() * 1000)].style.backgroundColor = getColor();
+	}, 50);
+
+	var getColor = function() {
+		// Random colour from http://stackoverflow.com/questions/1535128/apply-random-color-to-class-elements-individually
+		return 'rgb(' + (Math.floor((256-199)*Math.random()) + 200) + ',' + (Math.floor((256-199)*Math.random()) + 200) + ',' + (Math.floor((256-199)*Math.random()) + 200) + ')';
+	}
+</script>
